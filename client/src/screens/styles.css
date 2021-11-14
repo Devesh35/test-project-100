@@ -1,0 +1,126 @@
+.screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.background-gradient {
+    width: 100%;
+    z-index: -1;
+    height: 400px;
+    background: linear-gradient(rgb(185, 226, 235), transparent);
+    margin-bottom: -250px;
+}
+
+.foreground {
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 0px;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+.item-row {
+    display: flex;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 25px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-ad-col {
+    border: 1px solid black;
+    padding: 5%;
+}
+
+.product>img {
+    width: 100%;
+    height: undefined;
+    margin-bottom: 20px;
+    aspect-ratio: 1.44;
+}
+
+.product>p>strong {
+    color: blue;
+}
+
+.product>h2 {
+    color: blue;
+    margin-bottom: 25px;
+}
+
+.product>h3 {
+    color: cyan;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 5%;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-border {
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    color: purple;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.button-filled {
+    width: 100px;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.footer {
+    width: 100%;
+    z-index: -1;
+    height: 400px;
+    background: linear-gradient(transparent, rgb(185, 226, 235));
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer>div {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col>h6 {
+    color: purple;
+}

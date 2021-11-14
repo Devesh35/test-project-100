@@ -12,10 +12,12 @@ function App() {
   const nav = useNavigate();
 
   useEffect(() => {
-    nav('/4')
+    nav('/')
     // eslint-disable-next-line
   }, [])
 
+  // Screen 1,2,3 uses bootstrap css
+  // Screen 4,5 uses screen.css
   return (
     <>
       <Routes>

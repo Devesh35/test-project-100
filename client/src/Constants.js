@@ -14,6 +14,7 @@ export const COMPANY = {
 
 export const REDUCER = {
     itemStore: {
+        productSelect: 'ITEM-STORE-PRODUCT-SELECT',
         select: 'ITEM-STORE-SELECT',
         clearSelection: 'ITEM-STORE-CLEAR-FILTERS',
     }

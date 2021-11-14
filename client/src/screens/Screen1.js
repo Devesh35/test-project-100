@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { connect } from 'react-redux';
+import { BsMenuButton, BsMessenger, BsHeartFill, BsGearFill } from 'react-icons/bs';
 
 import Header from "../components/Header";
-import { BsMenuButton, BsMessenger, BsHeartFill, BsGearFill } from 'react-icons/bs';
 import { COLOR } from "../Constants";
-import { useState } from 'react';
 
 import '../styles.css';
 

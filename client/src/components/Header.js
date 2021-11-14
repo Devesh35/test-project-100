@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 
 import logo192 from '../images/logo192.png'
 import '../styles.css';
-import './styles.css';
 
 function Header({ screen }) {
 
@@ -14,6 +13,10 @@ function Header({ screen }) {
     const nav = useNavigate();
 
     const handleClick = clicked => nav(`/${clicked}`)
+
+    const screenSwitch = (index) => <>
+        <h5 className='clickable col p-0 m-0' onClick={() => handleClick(index)} style={{ color: (screen === index ? 'blue' : 'black') }}>Screen {index} </h5>
+    </>
 
     return (
         <>
@@ -26,12 +29,12 @@ function Header({ screen }) {
                     <div className='col row' style={{ marginInline: '30px' }}>
                         <input type='text' placeholder='I am looking for...' onChange={handleChange} value={state.text} color='black' />
                     </div>
-                    <div className='col-4' style={{ display: 'flex', minWidth: '550px' }}>
-                        <h5 className='clickable' onClick={() => handleClick(1)} style={{ color: (screen === 1 ? 'blue' : 'black') }}>Screen 1 </h5>
-                        <h5 className='clickable' onClick={() => handleClick(2)} style={{ color: (screen === 2 ? 'blue' : 'black') }}>Screen 2 </h5>
-                        <h5 className='clickable' onClick={() => handleClick(3)} style={{ color: (screen === 3 ? 'blue' : 'black') }}>Screen 3 </h5>
-                        <h5 className='clickable' onClick={() => handleClick(4)} style={{ color: (screen === 4 ? 'blue' : 'black') }}>Screen 4 </h5>
-                        <h5 className='clickable' onClick={() => handleClick(5)} style={{ color: (screen === 5 ? 'blue' : 'black'), marginInlineEnd: '10px' }}>Screen 5 </h5>
+                    <div className='col-4 row row-cols-5 d-flex justify-content-center' style={{ minWidth: '550px' }}>
+                        {screenSwitch(1)}
+                        {screenSwitch(2)}
+                        {screenSwitch(3)}
+                        {screenSwitch(4)}
+                        {screenSwitch(5)}
                     </div>
                 </div>
             </div>

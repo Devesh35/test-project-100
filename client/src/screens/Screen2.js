@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { connect } from "react-redux";
+
 import Header from "../components/Header";
 import { REDUCER } from "../Constants";
 
@@ -16,7 +16,7 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
 
     const dropdown = (name, data, selection, onChange) => <>
         <select className='dropdown col-10 btn rounded border' style={{ backgroundColor: 'white' }} value={selection} onChange={e => onChange({ name, selection: e.target.value })} key={name}>
-            {data.map(type => <option className='text-center' value={type} >{type}</option>)}
+            {data.map(type => <option className='text-center' value={type} key={name + type} >{type}</option>)}
         </select>
     </>
 
@@ -25,9 +25,9 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
         {f.filter.length <= 2 ?
             <>
                 {f.filter.map(type =>
-                    <div class="form-check" key={type}>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">{type}</label>
+                    <div className="form-check" key={type}>
+                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label className="form-check-label" >{type}</label>
                     </div>
                 )}
             </>
@@ -75,8 +75,8 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
                     Main / <b>Search Results: Products</b>
                 </div>
                 <div className='col-2 row justify-content-between text-center'>
-                    <div className='col clickable'><b>Just Added</b></div>
-                    <div className='col clickable'><b>Featured</b></div>
+                    <div className='col cursor-pointer'><b>Just Added</b></div>
+                    <div className='col cursor-pointer'><b>Featured</b></div>
                 </div>
                 <div className='col-3 text-end'>
                     We have found 71 products matching your criteria.
@@ -129,7 +129,6 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
         {bodyFilter()}
         {itemsDisplay()}
     </>
-
 
     return (
         <>

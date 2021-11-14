@@ -1,12 +1,14 @@
 .clickable {
     cursor: pointer;
-    padding: 0px;
-    margin-inline-end: 30px;
     transition: transform 100ms;
 }
 
 .clickable:hover {
     transform: scale(1.05);
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .background-lightgray {

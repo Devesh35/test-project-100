@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import Header from "../components/Header";
-// import { COLOR } from "../Constants";
 
 import { BsGear, BsHeartFill, BsMessenger, BsPersonPlusFill, BsStarFill } from 'react-icons/bs';
 
