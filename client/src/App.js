@@ -12,7 +12,7 @@ function App() {
   const nav = useNavigate();
 
   useEffect(() => {
-    nav('/3')
+    nav('/4')
     // eslint-disable-next-line
   }, [])
 
