@@ -24,7 +24,7 @@ function Header({ screen }) {
                 <div className='row text-center align-middle'>
                     <div className='col-2 d-flex justify-content-center' style={{ minWidth: '250px' }}>
                         <img src={logo192} alt={'Logo'} style={{ width: '30px', height: '30px', marginInlineEnd: '10px' }} />
-                        <h5>React-test-app</h5>
+                        <h5>React-Test-App</h5>
                     </div>
                     <div className='col row' style={{ marginInline: '30px' }}>
                         <input type='text' placeholder='I am looking for...' onChange={handleChange} value={state.text} color='black' />
