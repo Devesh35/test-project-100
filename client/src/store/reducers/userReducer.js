@@ -11,14 +11,14 @@ const dummyState = {
         {
             id: 'ndvoirsdinr',
             displayImage: 'https://images.pexels.com/photos/804269/pexels-photo-804269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            name: 'Pattern Generator',
-            shortDesc: 'This is the very first project, it is used to generate patterns.',
+            name: 'Find Match one',
+            shortDesc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         },
         {
             id: 'dsfowoerww',
             displayImage: 'https://images.pexels.com/photos/2471234/pexels-photo-2471234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            name: 'Abstract',
-            shortDesc: 'This is the second project, it creats abstracts image from 2D random numbers.',
+            name: 'Find Match two',
+            shortDesc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         },
     ]
 }

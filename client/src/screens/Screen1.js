@@ -7,14 +7,14 @@ import { useState } from 'react';
 
 import '../styles.css';
 
-const Screen1 = ({ user, projects }) => {
+const Screen1 = ({ user, companies }) => {
 
     const iconContainerSize = '100px'
     const iconSize = '50px'
 
     const profileImageSize = '200px'
 
-    const [projectNum, setProjectNum] = useState(0)
+    const [companyIndex, setCompanyIndex] = useState(0)
 
     const imageStyle = { width: '100%', height: undefined, aspectRatio: '1', backgroundColor: 'white' }
 
@@ -39,7 +39,7 @@ const Screen1 = ({ user, projects }) => {
     </>
 
     const header = () => <>
-        <div className='container-fluid row p-2 m-0' style={{ backgroundColor: COLOR.lightBlue }}>
+        <div className='container-fluid row p-2 m-0 background-skyblue'>
             <div className='col row p-5 m-0'>
                 <div className='col-4 d-flex flex-row-reverse' >
                     <img className='border border-primary border-3 rounded p-1 m-0' src={`${user.profile.image}`} alt='user' style={{ width: profileImageSize, height: profileImageSize, backgroundColor: 'white' }} />
@@ -71,14 +71,14 @@ const Screen1 = ({ user, projects }) => {
         </div>
     </>
 
-    const phStyle = { width: '100%', backgroundColor: COLOR.veryLightGray }
+    const classname = 'border rounded background-verylightgray w-100'
 
     const displayProjectPlaceholder = () => <>
         <div>
-            <div className='p-1 mb-4 border rounded' style={{ ...imageStyle, ...phStyle }} />
-            <div className='p-1 m-1 border rounded' style={{ height: '40px', ...phStyle }}> </div>
-            <div className='p-1 m-1 border rounded' style={{ height: '74px', ...phStyle }}> </div>
-            <button className='btn border rounded w-50' style={{ height: '40px', ...phStyle }}>   </button>
+            <div className={`p-1 mb-4 ${classname}`} style={{ ...imageStyle, backgroundColor: COLOR.veryLightGray }} />
+            <div className={`p-1 m-1 ${classname}`} style={{ height: '40px', }} />
+            <div className={`p-1 m-1 ${classname}`} style={{ height: '74px', }} />
+            <div className='btn border rounded background-verylightgray w-50' style={{ height: '40px', }} />
         </div>
     </>
 
@@ -86,7 +86,7 @@ const Screen1 = ({ user, projects }) => {
         <div className='text-center m-0 p-5 border'>
             <h5 style={{ color: 'purple' }}>START USING REACT PLATFORM</h5>
             <h1 className='m-2 p-2' style={{ color: 'blue' }}>What do you want to do today?</h1>
-            <h5 className='mb-5 p-1'>We made it easy for you to write code for your webapp.</h5>
+            <h5 className='mb-5 p-1'>We made it easy for you to find your perfect match & possible buyer.</h5>
             <div className='container-fluid row text-center'>
                 {user.projects.map(p => <div className='col-3 mt-5 p-1' key={p.id}>{displayProject(p)}</div>)}
                 {[...Array(4 - (user.projects.length % 4))].map((x, i) => <div className='col-3 mt-5 p-1' key={i}>{displayProjectPlaceholder()}</div>)}
@@ -94,45 +94,45 @@ const Screen1 = ({ user, projects }) => {
         </div>
     </>
 
-    const projectDisplayInfo = (name, info) => <>
+    const companyDisplayInfo = (name, info) => <>
         <div className='col h6'>{name}</div>
         <div className='col-auto'>{info}</div>
     </>
 
-    const displayOtherProjects = (p) => <>
+    const companyDisplay = (p) => <>
         <div className='container-fluid row' style={{ backgroundColor: 'white' }}>
             <div className='col-6 p-2 m-0 text-center'>
                 <img className='row p-3 m-0 border rounded' src={`${p.image}`} alt='project' style={imageStyle} />
                 <div className='row text-center w-100'><h3>{p.rating}</h3> <h6>RATING</h6></div>
             </div>
             <div className='col p-0 mt-3'>
-                <div className='row p-1 m-0'><h2>{p.name}</h2></div>
+                <div className='row p-0 m-0 pt-1 pb-1'><h4>{p.name}</h4></div>
                 <div className='row p-1 m-0'>
                     <div className='col h6'>Acivity</div>
                     <div className='col-auto rounded-circle' style={{ backgroundColor: p.color, aspectRatio: '1' }}></div>
-                    <div className='col-auto'>{p.status}</div>
+                    <div className='col-auto'>{p.type}</div>
                 </div>
                 <div className='row p-1 m-0'>
-                    {projectDisplayInfo('Info1', p.info)}
+                    {companyDisplayInfo('Info1', p.info)}
                 </div>
                 <div className='row p-1 m-0'>
-                    {projectDisplayInfo('Info2', p.info2)}
+                    {companyDisplayInfo('Info2', p.info2)}
                 </div>
                 <div className='row p-1 m-0'>
-                    {projectDisplayInfo('Date', p.date)}
+                    {companyDisplayInfo('Date', p.date)}
                 </div>
             </div>
         </div>
     </>
 
-    const moveDisplayProject = (by) => {
-        const newNum = projectNum + by
-        if (newNum >= 0 && newNum < projects.length - 2)
-            setProjectNum(newNum)
+    const moveCompany = (by) => {
+        const newNum = companyIndex + by
+        if (newNum >= 0 && newNum < companies.length - 2)
+            setCompanyIndex(newNum)
     }
 
     const footer = () => <>
-        <div className='container-fluid p-5 m-0' style={{ backgroundColor: COLOR.backgroundGray }}>
+        <div className='container-fluid p-5 m-0 background-lightgray'>
             <div className='row p-1 mb-4'>
                 <div className='col-auto p-1 m-0 text-end'>
                     We suggest you to see
@@ -159,14 +159,14 @@ const Screen1 = ({ user, projects }) => {
             </div>
 
             <div className='row p-3 mt-4'>
-                <div className='col-auto clickable' onClick={() => moveDisplayProject(-1)}>
-                    {alignMiddle(<h2 style={{ color: (projectNum > 0 ? 'black' : COLOR.backgroundGray) }}>{'<'}</h2>)}
+                <div className='col-auto clickable' onClick={() => moveCompany(-1)}>
+                    {alignMiddle(<h2 style={{ color: (companyIndex > 0 ? 'black' : COLOR.backgroundGray) }}>{'<'}</h2>)}
                 </div>
-                <div className='col'>{displayOtherProjects(projects[projectNum])}</div>
-                <div className='col'>{displayOtherProjects(projects[projectNum + 1])}</div>
-                <div className='col'>{displayOtherProjects(projects[projectNum + 2])}</div>
-                <div className='col-auto clickable' onClick={() => moveDisplayProject(1)}>
-                    {alignMiddle(<h2 style={{ color: (projectNum < projects.length - 3 ? 'black' : COLOR.backgroundGray) }}>{'>'}</h2>)}
+                <div className='col'>{companyDisplay(companies[companyIndex])}</div>
+                <div className='col'>{companyDisplay(companies[companyIndex + 1])}</div>
+                <div className='col'>{companyDisplay(companies[companyIndex + 2])}</div>
+                <div className='col-auto clickable' onClick={() => moveCompany(1)}>
+                    {alignMiddle(<h2 style={{ color: (companyIndex < companies.length - 3 ? 'black' : COLOR.backgroundGray) }}>{'>'}</h2>)}
                 </div>
             </div>
 
@@ -186,7 +186,7 @@ const Screen1 = ({ user, projects }) => {
 
 const mapStateToProps = (state) => ({
     user: state.user,
-    projects: state.projects,
+    companies: state.companies,
 })
 
 export default connect(mapStateToProps)(Screen1);

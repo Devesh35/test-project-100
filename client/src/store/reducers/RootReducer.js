@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { itemStoreReducer } from "./itemStoreReducer";
-import { projectsReducer } from "./projectReducer";
+import { companyReducer } from "./companyReducer";
 import { userReducer } from "./userReducer";
 
 const rootReducer = combineReducers({
     user: userReducer,
-    projects: projectsReducer,
+    companies: companyReducer,
     itemStore: itemStoreReducer,
 });
 

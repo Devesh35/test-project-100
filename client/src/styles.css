@@ -1,8 +1,3 @@
-.flex-justify {
-    display: flex;
-    justify-content: center;
-}
-
 .clickable {
     cursor: pointer;
     padding: 0px;
@@ -12,4 +7,28 @@
 
 .clickable:hover {
     transform: scale(1.05);
+}
+
+.background-lightgray {
+    background-color: rgb(210, 210, 210);
+}
+
+.color-lightgray {
+    color: rgb(210, 210, 210);
+}
+
+.background-verylightgray {
+    background-color: rgb(240, 240, 240);
+}
+
+.color-verylightgray {
+    color: rgb(240, 240, 240);
+}
+
+.background-skyblue {
+    background-color: rgb(185, 226, 235);
+}
+
+.color-skyblue {
+    color: rgb(185, 226, 235);
 }

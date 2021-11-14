@@ -54,7 +54,7 @@ const dummyData = {
             info: 'Info 11',
             info2: 'Info 12',
             rating: '7.1',
-            image: 'https://images.pexels.com/photos/5186869/pexels-photo-5186869.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+            image: 'https://images.pexels.com/photos/5186869/pexels-photo-5186869.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
         },
         {
             name: 'Name 2',

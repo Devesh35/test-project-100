@@ -19,7 +19,7 @@ function Header({ screen }) {
         <>
             <div className='container-fluid border p-3'>
                 <div className='row text-center align-middle'>
-                    <div className='col-2 flex-justify' style={{ minWidth: '250px' }}>
+                    <div className='col-2 d-flex justify-content-center' style={{ minWidth: '250px' }}>
                         <img src={logo192} alt={'Logo'} style={{ width: '30px', height: '30px', marginInlineEnd: '10px' }} />
                         <h5>React-test-app</h5>
                     </div>

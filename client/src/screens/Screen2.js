@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { connect } from "react-redux";
 import Header from "../components/Header";
-import { COLOR, REDUCER } from "../Constants";
+import { REDUCER } from "../Constants";
 
 import '../styles.css';
 
@@ -12,7 +12,7 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
     const [sortBySelection, setSortBySelection] = useState({ selection: '' })
     const [showmeSelection, setShowMeSelection] = useState({ selection: '10 Products' })
 
-    const line = () => <div className='row me-5 ms-5 p-0' style={{ backgroundColor: COLOR.backgroundGray, height: '2px' }}></div>
+    const line = () => <div className='row me-5 ms-5 p-0 background-lightgray' style={{ height: '2px' }}></div>
 
     const dropdown = (name, data, selection, onChange) => <>
         <select className='dropdown col-10 btn rounded border' style={{ backgroundColor: 'white' }} value={selection} onChange={e => onChange({ name, selection: e.target.value })} key={name}>
@@ -39,7 +39,7 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
     </>
 
     const header = () => <>
-        <div className='container-fluid p-0 m-0 text-center' style={{ backgroundColor: COLOR.veryLightGray }}>
+        <div className='container-fluid p-0 m-0 text-center background-verylightgray'>
             <div className='row p-4 m-0'>
                 <h2 style={{ color: 'purple' }}>Here's where the magic happens</h2>
                 <h6>Use our detailed filtering system on the left to refine your desired search result</h6>
@@ -58,11 +58,11 @@ const Screen2 = ({ store, select, clearAllSelection }) => {
                     ?
                     <>
                         <div className='col' />
-                        <h5 className='col clickable' style={{ color: COLOR.backgroundGray }} onClick={() => setFilterDisplay(false)}>HIDE FILTERS</h5>
-                        <div className='col text-end pe-4' onClick={() => clearAllSelection()} style={{ color: COLOR.backgroundGray }}><b className='clickable'>Reset All Filters</b></div>
+                        <h5 className='col clickable color-lightgray' onClick={() => setFilterDisplay(false)}>HIDE FILTERS</h5>
+                        <div className='col text-end pe-4 color-lightgray' onClick={() => clearAllSelection()}><b className='clickable'>Reset All Filters</b></div>
                     </>
                     :
-                    <h5 className='col clickable' style={{ color: COLOR.backgroundGray }} onClick={() => setFilterDisplay(true)}>SHOW FILTERS</h5>
+                    <h5 className='col clickable color-lightgray' onClick={() => setFilterDisplay(true)}>SHOW FILTERS</h5>
                 }
             </div>
         </div>

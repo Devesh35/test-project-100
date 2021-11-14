@@ -4,11 +4,11 @@ export const COLOR = {
     backgroundGray: 'rgb(210, 210, 210)',
 }
 
-export const PROJECT = {
-    status: {
-        canceled: 'Cancelled',
-        working: 'Working',
-        completed: 'Completed',
+export const COMPANY = {
+    type: {
+        agent: 'Agent',
+        barCafe: 'Bar, Cafe',
+        cooperative: 'Cooperative',
     }
 }
 
